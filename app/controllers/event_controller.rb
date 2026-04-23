@@ -5,7 +5,11 @@ class EventController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
-    render json: @event
+    if Event.exists?(params[:id])
+      @event = Event.find(params[:id])
+      render json: @event
+    else
+      render json: { error: "Event not found" }, status: :not_found
+    end
   end
 end
