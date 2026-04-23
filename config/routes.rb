@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "events", to: "event#index"
+  get "events/:id", to: "event#show"
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_at: 2026-04-23 17:10:49
+  remaining_tickets: 1
+
+two:
+  name: MyString
+  start_at: 2026-04-23 17:10:49
+  remaining_tickets: 1
