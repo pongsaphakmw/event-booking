@@ -1,0 +1,28 @@
+services:
+  # web:
+  #   build: .
+  #   ports:
+  #     - "5000:5000"
+  #   volumes:
+  #     - .:/app
+  #   environment:
+  #     - SECRET_KEY_BASE=dummy
+
+  postgres:
+    image: postgres:17
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - event-booking
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+networks:
+  event-booking:
+    driver: bridge
+
+volumes:
+  postgres_data: {}
