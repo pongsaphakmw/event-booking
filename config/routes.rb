@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "events", to: "event#index"
   get "events/:id", to: "event#show"
+
+  post "bookings", to: "booking#create"
+  get "users/:id/bookings", to: "ticket#index"
+  get "users/:id/bookings/:ticket_id", to: "ticket#show"
 end
